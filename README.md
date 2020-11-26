@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # redfood project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
@@ -48,3 +49,7 @@ If you want to learn more about building native executables, please consult http
 Guide: https://quarkus.io/guides/rest-json
 
 
+=======
+# redfood
+Plataforma open source de delivery - inspirado no sistema pede fácil e ifood
+>>>>>>> 56dacff220fb0479de28f8b2af65f10700a8e541
