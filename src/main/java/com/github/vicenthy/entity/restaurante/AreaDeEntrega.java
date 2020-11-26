@@ -5,6 +5,9 @@ import java.math.BigDecimal;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 
 public class AreaDeEntrega extends PanacheMongoEntity {
+
+
+    public String restauranteId;
     public Double raio;
     public BigDecimal valorMinimo;
     public BigDecimal taxaDeEntrega;

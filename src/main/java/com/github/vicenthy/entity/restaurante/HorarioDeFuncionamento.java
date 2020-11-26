@@ -7,6 +7,7 @@ import io.quarkus.mongodb.panache.PanacheMongoEntity;
 public class HorarioDeFuncionamento extends PanacheMongoEntity{
 
     public HorarioDeFuncionamento(){}
+    public String restauranteId;
     public String diaDaSemana;
     public Boolean aberto;
     public Instant horaDe;

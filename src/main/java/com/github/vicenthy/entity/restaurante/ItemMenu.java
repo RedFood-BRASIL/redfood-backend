@@ -5,10 +5,8 @@ import java.math.BigDecimal;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 
 public class ItemMenu extends PanacheMongoEntity {
-
-    public ItemMenu(){}
-
-    
+    public ItemMenu(){} 
+    public String restauranteId; 
     public String nomeDoItem;
     public Categoria categoria;
     public String descricaoItem;

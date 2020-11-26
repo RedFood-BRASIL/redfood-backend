@@ -1,7 +1,4 @@
 package com.github.vicenthy.endpoints.restaurante;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -24,8 +21,6 @@ import org.bson.types.ObjectId;
 @Consumes("application/json")
 public class CategoriaEndPoint {
     
-
-
     @POST
     public Response create(Categoria categoria){
         categoria.persist();
@@ -55,7 +50,6 @@ public class CategoriaEndPoint {
         var base = new BaseResponse<Categoria>(categoria);
         return Response.ok(base).build();
     }
-
 
     @DELETE
     @Path("{id}")

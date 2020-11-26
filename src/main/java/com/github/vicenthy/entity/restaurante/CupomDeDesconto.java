@@ -12,6 +12,7 @@ public class CupomDeDesconto extends PanacheMongoEntity{
 
 
     public CupomDeDesconto(){}
+    public String restauranteId;
     public String codigo;
     public Instant inicio;
     public Instant vencimento;
