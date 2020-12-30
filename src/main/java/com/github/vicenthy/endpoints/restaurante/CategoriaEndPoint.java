@@ -16,9 +16,6 @@ import com.github.vicenthy.endpoints.dto.BaseResponse;
 import com.github.vicenthy.entity.restaurante.Categoria;
 
 import org.bson.types.ObjectId;
-
-import io.quarkus.security.Authenticated;
-
 @Path("/categoria")
 @Produces("application/json")
 @Consumes("application/json")
