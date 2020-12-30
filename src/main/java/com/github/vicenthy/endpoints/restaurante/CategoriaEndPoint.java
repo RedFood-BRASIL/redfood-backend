@@ -1,6 +1,7 @@
 package com.github.vicenthy.endpoints.restaurante;
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -16,9 +17,12 @@ import com.github.vicenthy.entity.restaurante.Categoria;
 
 import org.bson.types.ObjectId;
 
+import io.quarkus.security.Authenticated;
+
 @Path("/categoria")
 @Produces("application/json")
 @Consumes("application/json")
+@RolesAllowed("restaurante")
 public class CategoriaEndPoint {
     
     @POST
@@ -54,8 +58,7 @@ public class CategoriaEndPoint {
     @DELETE
     @Path("{id}")
     public Response delete(@PathParam("id") String id){
-        Categoria categoria = Categoria.findById(new ObjectId(id));
-        categoria.delete();
+        Categoria.deleteById(new ObjectId(id));
         var base = new BaseResponse<String>("Sucesso");
         return Response.ok(base).build();
     }

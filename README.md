@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # redfood project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
@@ -45,11 +44,24 @@ You can then execute your native executable with: `./target/redfood-1.0.0-SNAPSH
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
 
 # RESTEasy JAX-RS
-
 Guide: https://quarkus.io/guides/rest-json
-
-
 =======
 # redfood
 Plataforma open source de delivery - inspirado no sistema pede fácil e ifood
->>>>>>> 56dacff220fb0479de28f8b2af65f10700a8e541
+
+
+## Create Public and Private Key
+For unix-like OS you can run this on terminal, for private key
+```
+    openssl req -newkey rsa:2048 -new -nodes -keyout privatekey.pem -out csr.pem
+
+```
+
+for public key
+
+```
+openssl rsa -in privatekey.pem -pubout > publickey.pem
+
+```
+
+then, copy privatekey.pem and publickey.pem to resource folder (src/main/resources).
