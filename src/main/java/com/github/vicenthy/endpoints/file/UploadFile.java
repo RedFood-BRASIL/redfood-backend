@@ -16,7 +16,10 @@ import javax.ws.rs.core.Response;
 
 import org.jboss.resteasy.annotations.providers.multipart.MultipartForm;
 
+import io.quarkus.security.Authenticated;
+
 @Path("/upload")
+@Authenticated
 public class UploadFile {
 
     @POST

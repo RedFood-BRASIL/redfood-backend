@@ -72,6 +72,18 @@
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-openapi</artifactId>
     </dependency>
+
+    <dependency>
+  <groupId>org.mapstruct</groupId>
+  <artifactId>mapstruct</artifactId>
+  <version>1.4.1.Final</version>
+</dependency>
+<dependency>
+  <groupId>org.mapstruct</groupId>
+  <artifactId>mapstruct-processor</artifactId>
+  <version>1.4.1.Final</version>
+  <scope>provided</scope>
+</dependency>
   </dependencies>
   <build>
     <plugins>
@@ -134,6 +146,36 @@
               </execution>
             </executions>
           </plugin>
+
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.5.1</version>
+          <configuration>
+              <source>1.8</source>
+              <target>1.8</target>
+              <annotationProcessorPaths>
+                  <path>
+                      <groupId>org.mapstruct</groupId>
+                      <artifactId>mapstruct-processor</artifactId>
+                      <version>${org.mapstruct.version}</version>
+                  </path>
+              </annotationProcessorPaths>
+              <!-- due to problem in maven-compiler-plugin, for verbose mode add showWarnings -->
+              <showWarnings>true</showWarnings>
+              <compilerArgs>
+                  <compilerArg>
+                      -Amapstruct.suppressGeneratorTimestamp=true
+                  </compilerArg>
+                  <compilerArg>
+                      -Amapstruct.suppressGeneratorVersionInfoComment=true
+                  </compilerArg>
+                  <compilerArg>
+                      -Amapstruct.verbose=true
+                  </compilerArg>
+              </compilerArgs>
+          </configuration>
+        </plugin>
         </plugins>
       </build>
       <properties>

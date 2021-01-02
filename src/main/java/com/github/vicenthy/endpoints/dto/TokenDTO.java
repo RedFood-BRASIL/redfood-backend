@@ -1,22 +1,35 @@
 package com.github.vicenthy.endpoints.dto;
 
 public class TokenDTO {
-    
+
     private Long expiresIn;
     private String accessToken;
     private String refreshToken;
+    private String typeExpires;
 
     public TokenDTO() {
+        this.typeExpires = "seconds";
 
     }
 
-    public TokenDTO(Long expiresIn, String accessToken, String refreshToken) {
+
+    public TokenDTO(Long expiresIn, String accessToken, String refreshToken, String typeExpires) {
         this.expiresIn = expiresIn;
         this.accessToken = accessToken;
         this.refreshToken = refreshToken;
+        this.setTypeExpires(typeExpires);
     }
 
 
+
+
+    public String getTypeExpires() {
+        return typeExpires;
+    }
+
+    public void setTypeExpires(String typeExpires) {
+        this.typeExpires = typeExpires;
+    }
     
     public String getRefreshToken() {
         return refreshToken;

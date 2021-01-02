@@ -1,23 +1,19 @@
-package com.github.vicenthy.entity.restaurante;
+package com.github.vicenthy.endpoints.dto.restaurante;
 
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
+import com.github.vicenthy.endpoints.dto.EnderecoPostDTO;
 
-public class Restaurante extends PanacheMongoEntity {
+public class RestaurantePostDTO {
 
     private String logoUrl;
     private String nomeDaEmpresa;
     private String categoriaEmpresa;
-    private Endereco endereco;
+    private EnderecoPostDTO endereco;
     private String email;
     private String password;
     private String telefone;
 
-    public Restaurante() {
-    
-    }
-
     public String getLogoUrl() {
-        return logoUrl;
+        return this.logoUrl;
     }
 
     public void setLogoUrl(String logoUrl) {
@@ -25,7 +21,7 @@ public class Restaurante extends PanacheMongoEntity {
     }
 
     public String getNomeDaEmpresa() {
-        return nomeDaEmpresa;
+        return this.nomeDaEmpresa;
     }
 
     public void setNomeDaEmpresa(String nomeDaEmpresa) {
@@ -33,23 +29,23 @@ public class Restaurante extends PanacheMongoEntity {
     }
 
     public String getCategoriaEmpresa() {
-        return categoriaEmpresa;
+        return this.categoriaEmpresa;
     }
 
     public void setCategoriaEmpresa(String categoriaEmpresa) {
         this.categoriaEmpresa = categoriaEmpresa;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public EnderecoPostDTO getEndereco() {
+        return this.endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(EnderecoPostDTO endereco) {
         this.endereco = endereco;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -57,7 +53,7 @@ public class Restaurante extends PanacheMongoEntity {
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -65,7 +61,7 @@ public class Restaurante extends PanacheMongoEntity {
     }
 
     public String getTelefone() {
-        return telefone;
+        return this.telefone;
     }
 
     public void setTelefone(String telefone) {
@@ -73,4 +69,8 @@ public class Restaurante extends PanacheMongoEntity {
     }
 
 
+
+
+
+    
 }

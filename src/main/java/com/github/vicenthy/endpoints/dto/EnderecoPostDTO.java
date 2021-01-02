@@ -1,7 +1,6 @@
-package com.github.vicenthy.entity.restaurante;
-import io.quarkus.mongodb.panache.PanacheMongoEntity;
+package com.github.vicenthy.endpoints.dto;
 
-public class Endereco extends PanacheMongoEntity {
+public class EnderecoPostDTO {
 
     private String cep;
     private String logradouro;
@@ -13,10 +12,12 @@ public class Endereco extends PanacheMongoEntity {
     private Double longitude;
 
 
+    
     public String getCep() {
         return this.cep;
     }
 
+    
     public void setCep(String cep) {
         this.cep = cep;
     }
@@ -79,4 +80,6 @@ public class Endereco extends PanacheMongoEntity {
 
 
 
+
+    
 }

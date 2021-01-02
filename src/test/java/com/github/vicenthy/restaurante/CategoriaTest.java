@@ -12,6 +12,6 @@ public class CategoriaTest {
         given()
           .when().get("/categoria")
           .then()
-             .statusCode(200);
+             .statusCode(401);
     }
 }

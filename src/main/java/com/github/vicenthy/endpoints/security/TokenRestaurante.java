@@ -26,7 +26,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Path("/restaurante/auth")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Tag(name = "Profile", description = "Operations on categories resource.")
+@Tag(name = "Restaurante", description = "Autenticação do restaurante")
 public class TokenRestaurante {
 
     Set<Role> profileRole = new HashSet<>();
