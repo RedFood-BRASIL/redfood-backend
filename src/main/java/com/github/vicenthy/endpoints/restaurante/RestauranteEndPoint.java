@@ -24,7 +24,6 @@ import com.github.vicenthy.endpoints.dto.restaurante.RestauranteGetDTO;
 import com.github.vicenthy.endpoints.dto.restaurante.RestaurantePostDTO;
 import com.github.vicenthy.entity.restaurante.Restaurante;
 
-import org.bson.types.ObjectId;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;

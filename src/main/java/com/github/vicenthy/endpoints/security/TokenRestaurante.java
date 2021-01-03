@@ -13,11 +13,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
 
 import com.github.vicenthy.config.jwt.TokenService;
 import com.github.vicenthy.endpoints.dto.BaseResponse;
 import com.github.vicenthy.endpoints.dto.LoginBaseDTO;
 import com.github.vicenthy.endpoints.dto.TokenDTO;
+import com.github.vicenthy.entity.restaurante.Restaurante;
+import com.github.vicenthy.repository.RestauranteRepository;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
@@ -32,6 +35,8 @@ public class TokenRestaurante {
     Set<Role> profileRole = new HashSet<>();
     @Inject
     TokenService tokenService;
+    @Inject
+    RestauranteRepository restauranteRepository;
 
     @POST
     @Path("token")
@@ -40,8 +45,13 @@ public class TokenRestaurante {
     @Operation(summary = "")
     public Response login(@Valid LoginBaseDTO login) throws Exception {
         profileRole.add(new Role("restaurante", List.of()));
-        var token = tokenService.createToken(login.login, profileRole);
-        var responseDTO = new BaseResponse<TokenDTO>(token, "Sucesso!");
-        return Response.ok(responseDTO).build();
+        Restaurante restaurante = restauranteRepository.findByEmailAndPassword(login.email, login.password);
+          if(restaurante != null){
+            var token = tokenService.createToken(login.login, profileRole);
+            var responseDTO = new BaseResponse<TokenDTO>(token, "Sucesso!");
+            return Response.ok(responseDTO).build();    
+          } else{
+              return Response.status(Status.NOT_FOUND).build();
+          }
     }
 }
